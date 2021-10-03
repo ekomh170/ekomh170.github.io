@@ -16,6 +16,10 @@ nav {
         background-color: #000000;
 }
 
+section {
+        padding-top: 5rem;
+}
+
 #projects {
     background-color: #000000;
 }
