@@ -310,12 +310,13 @@
                     <center>
                         <hr style="width:50%; text-align: center;">
                     </center>
-                    <!-- <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
-                        <strong><i class="bi bi-emoji-smile"></i> Pesan Telah Terkirim </strong> Terima Kasih Atas
-                        Ulasan nya saya akan menjadi lebih baik lagi dan maaf atas kekurangan nya <i
+                    <div class="alert alert-success alert-dismissible fade show text-center alert-contact-me d-none"
+                        role="alert">
+                        <strong><i class="bi bi-emoji-smile"></i> Pesan Telah Terkirim </strong>, Terima Kasih atas
+                        ulasan dan pesan nya saya akan menjadi lebih baik lagi dan maaf atas kekurangan nya <i
                             class="bi bi-emoji-smile"></i>
                         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-                    </div> -->
+                    </div>
 
                     <form name="portofolio-contact-form">
                         <div class="mb-3">
@@ -343,7 +344,11 @@
                             <label for="no_hp" class="form-label">Nomor Handphone</label>
                             <input type="number" class="form-control" id="no_hp" name="no_hp">
                         </div>
-                        <button type="submit" class="btn btn-outline-dark">Kirim Pesan</button>
+                        <button type="submit" class="btn btn-outline-dark btn-kirim">Kirim Pesan</button>
+                        <button class="btn btn-outline-dark btn-proses d-none" type="button" disabled>
+                            <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>
+                            Proses Pesan
+                        </button>
                     </form>
                     <div class="text-center pt-5">
                         <div class="spinner-grow text-primary" role="status">
@@ -442,14 +447,26 @@
         const scriptURL =
             'https://script.google.com/macros/s/AKfycbzN6d5GMOapVwrHDF8cWqQZWuyLoj1pd0-emppu869JmPqz5b3XhJtEuHpwt5BimJ0h/exec'
         const form = document.forms['portofolio-contact-form']
+        const btn_kirim = document.querySelector('.btn-kirim')
+        const btn_proses = document.querySelector('.btn-proses')
+        const alert_contact = document.querySelector('.alert-contact-me')
 
         form.addEventListener('submit', e => {
             e.preventDefault()
+            btn_proses.classList.toggle('d-none')
+            btn_kirim.classList.toggle('d-none')
             fetch(scriptURL, {
                     method: 'POST',
                     body: new FormData(form)
                 })
-                .then(response => console.log('Success!', response))
+                .then(response => {
+                    btn_proses.classList.toggle('d-none')
+                    btn_kirim.classList.toggle('d-none')
+                    alert_contact.classList.toggle('d-none')
+                    form.reset();
+                    window.location.href = "#contact";
+                    console.log('Success!', response)
+                })
                 .catch(error => console.error('Error!', error.message))
         })
     </script>
