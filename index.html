@@ -132,6 +132,9 @@
                     <div class="h2">
                         About Me
                     </div>
+                    <center>
+                        <hr style="width:50%; text-align: center;">
+                    </center>
                 </div>
             </div>
             <div class="row justify-content-center fs-5 text-center">
@@ -161,6 +164,9 @@
                     <div class="h2 text-white">
                         Projects Me
                     </div>
+                    <center>
+                        <hr class="text-white" style="width:50%; text-align: center;">
+                    </center>
                 </div>
             </div>
             <div class="row">
@@ -299,29 +305,72 @@
                     </div>
                 </div>
             </div>
-            <div class="row justify-content-center">
+            <div class="row justify-content-center pt-4">
                 <div class="col-md-8">
-                    <form>
+                    <center>
+                        <hr style="width:50%; text-align: center;">
+                    </center>
+                    <!-- <div class="alert alert-success alert-dismissible fade show text-center" role="alert">
+                        <strong><i class="bi bi-emoji-smile"></i> Pesan Telah Terkirim </strong> Terima Kasih Atas
+                        Ulasan nya saya akan menjadi lebih baik lagi dan maaf atas kekurangan nya <i
+                            class="bi bi-emoji-smile"></i>
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div> -->
+
+                    <form name="portofolio-contact-form">
                         <div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Nama Lengkap</label>
-                            <input type="text" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
+                            <label for="nama_depan" class="form-label">Nama Depan</label>
+                            <input type="text" class="form-control" id="nama_depan" name="nama_depan">
+                        </div>
+                        <div class="mb-3">
+                            <label for="nama_belakang" class="form-label">Nama Belakang</label>
+                            <input type="text" class="form-control" id="nama_belakang" name="nama_belakang">
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputEmail1" class="form-label">Email address</label>
                             <input type="email" class="form-control" id="exampleInputEmail1"
-                                aria-describedby="emailHelp">
+                                aria-describedby="emailHelp" name="email">
                         </div>
                         <div class="mb-3">
                             <label for="exampleInputPassword1" class="form-label">Pesan</label>
                             <div class="form-floating">
-                                <textarea class="form-control" placeholder="Masukan Pesan Dan Kesan"
-                                    id="floatingTextarea2" style="height: 100px"></textarea>
-                                <label for="floatingTextarea2">Masukan Pesan</label>
+                                <textarea class="form-control" placeholder="Masukan Pesan Dan Kesan" id="pesan"
+                                    style="height: 100px" name="pesan"></textarea>
+                                <label for="pesan">Masukan Pesan</label>
                             </div>
                         </div>
-                        <button type="submit" class="btn btn-primary">Submit</button>
+                        <div class="mb-3">
+                            <label for="no_hp" class="form-label">Nomor Handphone</label>
+                            <input type="number" class="form-control" id="no_hp" name="no_hp">
+                        </div>
+                        <button type="submit" class="btn btn-outline-dark">Kirim Pesan</button>
                     </form>
+                    <div class="text-center pt-5">
+                        <div class="spinner-grow text-primary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-secondary" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-success" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-danger" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-warning" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-info" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-light" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                        <div class="spinner-grow text-dark" role="status">
+                            <span class="visually-hidden">Loading...</span>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -387,6 +436,22 @@
     <!-- Option 1: Bootstrap Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
+    </script>
+
+    <script>
+        const scriptURL =
+            'https://script.google.com/macros/s/AKfycbzN6d5GMOapVwrHDF8cWqQZWuyLoj1pd0-emppu869JmPqz5b3XhJtEuHpwt5BimJ0h/exec'
+        const form = document.forms['portofolio-contact-form']
+
+        form.addEventListener('submit', e => {
+            e.preventDefault()
+            fetch(scriptURL, {
+                    method: 'POST',
+                    body: new FormData(form)
+                })
+                .then(response => console.log('Success!', response))
+                .catch(error => console.error('Error!', error.message))
+        })
     </script>
 
     <!-- Option 2: Separate Popper and Bootstrap JS -->
