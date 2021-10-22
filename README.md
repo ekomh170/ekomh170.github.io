@@ -26,4 +26,3 @@ C. Komponen
 
 - Bootstrap 5
 - AOS (Animate On Scroll Library)
--
