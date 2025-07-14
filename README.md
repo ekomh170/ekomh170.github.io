@@ -1,28 +1,26 @@
-## Web Portofolio Saya
+# 🚀 Portfolio Website - Eko Muchamad Haryono
 
-<img src="assets/img/img_readme/ui_web_portofolio.PNG" alt="UI_WEB_PORTOFOLIO_MOBILE">
+Website portofolio profesional yang dibangun menggunakan [Next.js](https://nextjs.org/) dengan desain modern dan responsif. Menampilkan perjalanan karir, proyek-proyek, dan pengalaman sebagai Software Engineer.
 
-<h3>Web Mobile :</h3>
+## ✨ Fitur Utama
 
-<img src="assets/img/img_readme/ui_web_portofolio_mobile.jpeg" alt="UI_WEB_PORTOFOLIO_MOBILE">
+- 🎨 **Desain Modern & Responsif** - Dioptimalkan untuk semua perangkat (mobile, tablet, desktop)
+- 🌙 **Dark/Light Mode** - Tema gelap sebagai default dengan opsi tema terang
+- 📱 **Mobile-First Approach** - Pengalaman pengguna yang optimal di perangkat mobile
+- 🎭 **Animasi Halus** - Menggunakan Framer Motion untuk transisi yang menarik
+- 💼 **Showcase Proyek** - Galeri interaktif dari 16+ proyek pengembangan
+- 📄 **CV Terintegrasi** - Download CV dalam format PDF
+- 📧 **Kontak Terintegrasi** - Form kontak dengan EmailJS
+- 🔗 **Social Media Links** - Tautan ke LinkedIn, GitHub, dan platform lainnya
 
-## Alat Yang Digunakan Untuk Membuat Web :
+## 🛠️ Teknologi yang Digunakan
 
-A. Hardware :
-Laptop Aspire E1-472G. Speaksifikasi :
-
-- Ram : 4GB DD3 L Memory
-- Prosesor : Intel Core i5-4200U 1.6 GHz with Turbo Boost up to 2.5 GHz
-- Tipe System : 64 bit
-- VGA : NVIDIA GEFORCE GT 720M with 2GB Dedicated VRAM
-- SSD : 128 GB
-
-B. Software :
-
-- Visual Studio Code
-- Git
-
-C. Komponen
-
-- Bootstrap 5
-- AOS (Animate On Scroll Library)
+- **Framework**: Next.js 14 (App Router)
+- **Styling**: Tailwind CSS + Custom CSS
+- **UI Components**: Radix UI
+- **Animasi**: Framer Motion
+- **Slider**: Swiper.js
+- **Ikon**: React Icons
+- **Font**: JetBrains Mono
+- **Email**: EmailJS
+- **Deployment**: Vercel
